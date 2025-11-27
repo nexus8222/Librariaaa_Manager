@@ -75,7 +75,7 @@ At program startup:
 ---
 
 ## Project Structure
-
+```bash
 library_project/
 │
 ├── include/
@@ -96,7 +96,7 @@ library_project/
 │ └── main.cpp
 │
 └── library_data.txt
-
+```
 
 
 
