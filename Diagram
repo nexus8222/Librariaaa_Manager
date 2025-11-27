@@ -1,0 +1,61 @@
+                     +-----------------------+
+                     |       Item (abstract) |
+                     +-----------------------+
+                     | - id : int            |
+                     | - title : string      |
+                     +-----------------------+
+                     | + display() : void    |
+                     | + saveToFile():string |
+                     | + getId():int         |
+                     | + getTitle():string   |
+                     | ~Item()               |
+                     +-----------------------+
+                               ^
+         ---------------------------------------------------
+         |                        |                        |
+         |                        |                        |
++----------------+      +------------------+      +----------------+
+|      Book      |      |     Magazine     |      |     Comic      |
++----------------+      +------------------+      +----------------+
+| - author       |      | - issueNumber    |      | - illustrator  |
+| - pages        |      +------------------+      +----------------+
++----------------+      | overrides:       |      | overrides:     |
+| overrides:     |      | display()        |      | display()      |
+| display()      |      | saveToFile()     |      | saveToFile()   |
+| saveToFile()   |      +------------------+      +----------------+
+
+      
+                   +---------------------------+
+                   |           User            |
+                   +---------------------------+
+                   | - name : string           |
+                   | - userId : int            |
+                   | - borrowedItems : int[]   |
+                   | - countBorrowed : int     |
+                   +---------------------------+
+                   | + borrowItem(id:int)      |
+                   | + returnItem(id:int)      |
+                   | + display()               |
+                   | + deepCopyConstructor     |
+                   | ~User()                   |
+                   +---------------------------+
+
+
+                      +---------------------------+
+                      |          Library          |
+                      +---------------------------+
+                      | - items : vector<Item*>   |
+                      | - users : vector<User>    |
+                      | - static totalItems:int   |
+                      | - static totalUsers:int   |
+                      +---------------------------+
+                      | + addItem(Item*)          |
+                      | + removeItem(id:int)       |
+                      | + searchItem(title)        |
+                      | + loadFromFile()           |
+                      | + saveToFile()             |
+                      | + showAllItems()           |
+                      | + operator+ (Item*)        |
+                      | + operator- (int id)       |
+                      | + operator<< (ostream&)    |
+                      +---------------------------+

@@ -1,0 +1,155 @@
+🟦 PHASE 1 — Base Architecture Setup
+✔ Step 1: Create Item (abstract class)
+
+Pure virtual display()
+
+Pure virtual saveToFile()
+
+Protected data members: id, title
+
+Virtual destructor
+
+✔ Step 2: Create derived classes
+
+Create these files:
+
+Book.h / Book.cpp
+
+Magazine.h / Magazine.cpp
+
+Comic.h / Comic.cpp
+
+Each must override:
+
+display()
+
+saveToFile()
+
+Use constructor initialization lists.
+
+🟩 PHASE 2 — User System
+✔ Step 3: Create User class
+
+name
+
+id
+
+borrowedItemIds (dynamic array → demonstrates C-style memory)
+
+deep copy constructor
+
+destructor
+
+borrowItem()
+
+returnItem()
+
+🟧 PHASE 3 — Library Core Manager
+✔ Step 4: Create Library class
+
+Contains:
+
+vector of Item* (polymorphism)
+
+vector of User
+
+static counters
+
+Implements:
+
+addItem()
+
+addUser()
+
+removeItem()
+
+searchItem()
+
+borrow()
+
+return()
+
+showAllItems()
+
+operator overloading:
+
+operator+(Item*)
+
+operator-(int id)
+
+operator<< (print stats)
+
+🟥 PHASE 4 — File Handling (Persistence)
+✔ Step 5: Implement saving
+
+On exit:
+
+Loop through items
+
+Write "TYPE|id|title|field1|field2" format
+
+✔ Step 6: Implement loading
+
+On startup:
+
+Read line-by-line
+
+Parse
+
+Create correct derived type (Book/Magazine/Comic)
+
+Push into items vector
+
+This uses:
+
+file I/O
+
+parsing
+
+dynamic memory
+
+polymorphic object creation
+
+🟪 PHASE 5 — Sorting + Function Pointers
+✔ Step 7: Add sorting functions in Library
+
+sort by title
+
+sort by ID
+
+sort by type
+
+Use:
+
+Function pointer
+OR
+
+std::function
+
+This demonstrates C + modern C++ hybrid.
+
+🟫 PHASE 6 — Exceptions
+✔ Step 8: Add custom errors
+
+Throw exceptions for:
+
+Invalid user ID
+
+Duplicate book
+
+File missing
+
+Borrowing unavailable item
+
+Use try / catch.
+
+🟨 PHASE 7 — Menu System
+✔ Step 9: Implement menu in main.cpp
+
+Use:
+
+loops
+
+switch-case
+
+function pointer to dispatch menu actions
