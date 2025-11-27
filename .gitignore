@@ -1,4 +1,5 @@
 Checklist
 *vscode
 *.vscode
-.vscode
+.vscode/
+.git/

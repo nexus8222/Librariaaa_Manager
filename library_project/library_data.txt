@@ -1,4 +1,0 @@
-Book|1|The Alchemist|Paulo Coelho|208
-Book|2|Clean Code|Robert C. Martin|464
-Magazine|3|National Geographic|310|December
-Comic|5|Spider-Man|JK miCHeal|2|Marvel
