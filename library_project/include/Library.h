@@ -1,41 +1,44 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
+using namespace std;
 #include <string>
+#include <vector>
 #include "Item.h"
 #include "User.h"
 
 class Library {
 private:
-    Item** items;
-    int itemCount;
-    int itemCapacity;
-
-    User* users;
-    int userCount;
-    int userCapacity;
+    vector<Item*> items;   // Vector of pointers for polymorphism
+    vector<User> users;    // Vector of User objects
 
     int nextItemId;
     int nextUserId;
-
-    void expandItems();
-    void expandUsers();
+    std::string illustrator;
+    int Volume;
 
 public:
+    // Constructor
     Library();
+
+    // Destructor
     ~Library();
 
-    int addBook(std::string title, std::string author, int pages);
-    int addMagazine(std::string title, int issue, std::string month);
-    int addComic(std::string title, std::string universe);
+    // Add items
+    int addBook(const std::string& title, const std::string& author, int pages);
+    int addMagazine(const std::string& title, int issue, const std::string& month);
+    int addComic(const std::string& title,int Volume,std::string illustrator,const std::string& universe);
 
-    int addUser(std::string name);
+    // Add user
+    int addUser(const std::string& name);
 
+    // Borrow / return
     void borrowItem(int userId, int itemId);
     void returnItem(int userId, int itemId);
 
-    void showAllItems();
-    void showAllUsers();
+    // Display
+    void showAllItems() const;
+    void showAllUsers() const;
 };
 
 #endif
