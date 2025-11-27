@@ -11,12 +11,12 @@ int main() {
     int b2 = lib.addBook("Clean Code", "Robert C. Martin", 464);
 
     // Test Magazines
-    int m1 = lib.addMagazine("National Geographic", 310, "JK miCHeal","December");
-    int m2 = lib.addMagazine("Time Magazine", 122,"Augusta Gein", "August");
+    int m1 = lib.addMagazine("National Geographic", 310,"December");
+    int m2 = lib.addMagazine("Time Magazine", 122,"August");
 
     // Test Comics
-    int c1 = lib.addComic("Spider-Man", "Marvel");
-    int c2 = lib.addComic("Batman", "DC");
+    int c1 = lib.addComic("Spider-Man",2, "JK miCHeal", "Marvel");
+    int c2 = lib.addComic("Batman",1,"Augusta Gein",  "DC");
 
     std::cout << "\n===== SHOW ALL ITEMS =====\n";
     lib.showAllItems();
@@ -66,6 +66,17 @@ int main() {
     std::cout << "\nCopied User Should NOT Have 999:\n";
     copy.display();
 
+
+    // Item Removing
+
+    // lib.removeItem(1);
+    // lib.removeItem(2);
+    // lib.removeItem(3);
+    lib.removeItem(4);
+    // lib.removeItem(5);
+    lib.removeItem(6);
+    // lib.showAllItems();
+   
     std::cout << "\n===== ALL TESTS COMPLETED SUCCESSFULLY =====\n";
 
     return 0;

@@ -6,7 +6,7 @@ Book::Book(int id, std::string title, std::string author, int pages)
 
 
     
-void Book::saveToFile(std::ostream &out) {
+void Book::saveToFile(std::ostream &out) const {
     out << "Book|" << id << "|" << title << "|" << author << "|" << pages << std::endl;
 }
 

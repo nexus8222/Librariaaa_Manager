@@ -13,7 +13,7 @@ public:
     Book(int id, std::string title, std::string author, int pages);
     
     void display() override;       
-    void saveToFile(std::ostream &out) override;
+    void saveToFile(std::ostream &out) const override;
 
 };
 

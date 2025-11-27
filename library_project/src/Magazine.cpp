@@ -6,7 +6,7 @@ Magazine::Magazine(int id, std::string title, int issueNumber, std::string month
     : Item(id, title), issueNumber(issueNumber), month(month) {}
 
 // Save to file
-void Magazine::saveToFile(std::ostream &out) {
+void Magazine::saveToFile(std::ostream &out) const {
     out << "Magazine|" << id << "|" << title << "|" << issueNumber << "|" << month << std::endl;
 }
 

@@ -13,7 +13,7 @@ public:
     Comic(int id, std::string title, int Volume, std::string illustrator,std::string universe);
 
     void display() override;       
-    void saveToFile(std::ostream &out) override;
+    void saveToFile(std::ostream &out) const override;
 };
 
 #endif

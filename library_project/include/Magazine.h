@@ -13,7 +13,7 @@ public:
     Magazine(int id, std::string title, int issueNumber, std::string month);
 
     void display() override;       
-    void saveToFile(std::ostream &out) override;
+    void saveToFile(std::ostream &out) const override;
 };
 
 #endif
